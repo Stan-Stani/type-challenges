@@ -31,7 +31,9 @@
 
 /* _____________ Your Code Here _____________ */
 
-type MyPick<T, K> = any
+type MyPick<T, K extends keyof T> = { [I in K]: T[I] }
+
+type result = MyPick<Todo, 'title' | 'completed'>
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
@@ -44,18 +46,18 @@ type cases = [
 ]
 
 interface Todo {
-  title: string
-  description: string
-  completed: boolean
+  title: string;
+  description: string;
+  completed: boolean;
 }
 
 interface Expected1 {
-  title: string
+  title: string;
 }
 
 interface Expected2 {
-  title: string
-  completed: boolean
+  title: string;
+  completed: boolean;
 }
 
 /* _____________ Further Steps _____________ */
