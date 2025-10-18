@@ -1,7 +1,7 @@
 /*
   6228 - JSON Parser
   -------
-  by Hydration (@hydrati) #extreme #template-literal #json
+  by Hydration (@hydrati) #extreme #template-literal #JSON
 
   ### Question
 
