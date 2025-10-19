@@ -22,7 +22,12 @@
 
 /* _____________ Your Code Here _____________ */
 
-type MyAwaited<T> = any
+type MyAwaited<T> = T extends Promise<infer U> ? MyAwaited<U> : T extends { then(arg0: (arg0: infer V) => any): any } ? MyAwaited<V> : T
+// 🥵😮‍💨
+
+type foo = MyAwaited<Promise<string>>
+type bar = MyAwaited<Promise<Promise<string | number>>>
+type baz = MyAwaited<{ then: (onfulfilled: (arg: number) => any) => any }>
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
