@@ -24,6 +24,8 @@
 
 type MyAwaited<T> = T extends Promise<infer U> ? MyAwaited<U> : T extends { then(arg0: (arg0: infer V) => any): any } ? MyAwaited<V> : T
 // 🥵😮‍💨
+// Seems like I'm probaby being a little redundant and https://github.com/type-challenges/type-challenges/issues/19864 is a bit simplified
+// from my solution.
 
 type foo = MyAwaited<Promise<string>>
 type bar = MyAwaited<Promise<Promise<string | number>>>
