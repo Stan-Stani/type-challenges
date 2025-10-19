@@ -57,5 +57,12 @@
     "jsonc",
     "yaml",
     "toml"
-  ]
+  ],
+  "workbench.colorCustomizations": {
+    "editorOverviewRuler.deletedForeground": "#633b07",
+    "editorOverviewRuler.modifiedForeground": "#CCCC00",
+    "activityBar.background": "#5F042C",
+    "titleBar.activeBackground": "#85053E",
+    "titleBar.activeForeground": "#FFFBFD"
+  }
 }
