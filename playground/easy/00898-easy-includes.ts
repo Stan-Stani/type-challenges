@@ -18,7 +18,10 @@
 
 /* _____________ Your Code Here _____________ */
 
-type Includes<T extends readonly any[], U> = any
+type Includes<T extends readonly any[], U> = U extends T[number] ? U extends object ? /** @todo ?*/false : false
+
+type Foo = 'a' extends 'a' | 'b' ? true : false
+type Baz = Includes<[{}], { a: 'A' }>
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'

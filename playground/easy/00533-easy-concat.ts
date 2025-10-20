@@ -18,7 +18,10 @@
 
 /* _____________ Your Code Here _____________ */
 
-type Concat<T, U> = any
+type Concat<T extends readonly any[], U extends readonly any[]> = [...T, ...U]
+
+/** @todo get clarity on why this is true and how it makes sense */
+type foo = any[] extends readonly any[] ? true : false
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
@@ -40,5 +43,5 @@ type error = Concat<null, undefined>
 /*
   > Share your solutions: https://tsch.js.org/533/answer
   > View solutions: https://tsch.js.org/533/solutions
-  > More Challenges: https://tsch.js.org
+  > More Challenges: https://tschsd.js.org
 */
